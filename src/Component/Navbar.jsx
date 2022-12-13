@@ -1,9 +1,40 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import {useDispatch, useSelector } from 'react-redux'
+import { Logout } from '../action/Action'
+import { useNavigate } from 'react-router-dom'
+import {TiShoppingCart} from "react-icons/ti"
 const Navbar = () => {
+
+  const Valid = useSelector((state)=>state.accountReducer)
+const dispatch = useDispatch()
+const navigate = useNavigate()
+
+  const logoutAccount=()=>{
+dispatch(Logout())
+navigate("/")
+  }
   return (
     <>
     <header className="text-gray-600 body-font">
+{Valid.isLoggedIn ?(
+    <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span className="ml-3 text-xl">E-Commerce</span>
+    </a>
+    <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+     <Link className="mr-5 hover:text-gray-900" to='/home'>Home</Link>
+     <Link className="mr-5 hover:text-gray-900" to='/about'>About</Link>
+     <Link className="mr-5 hover:text-gray-900 relative" to='/about'><TiShoppingCart size={40}/> <span className='absolute top-0 right-0 bottom-1px font-bold  text-2xl'>5</span></Link>
+     <Link onClick={logoutAccount} className="mr-5 hover:text-gray-900" to='/login'>Logout</Link>
+    </nav>
+    
+  </div>
+
+):(
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -21,6 +52,7 @@ const Navbar = () => {
       </svg>
     </button> */}
   </div>
+)}
 </header>
     </>
   )

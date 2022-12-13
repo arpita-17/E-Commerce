@@ -1,4 +1,4 @@
-export const Signup=(data)=>{
+export const Register=(data)=>{
     return{
         type:"SIGNUP",
         payload:data
