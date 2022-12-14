@@ -28,6 +28,7 @@ navigate("/")
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
      <Link className="mr-5 hover:text-gray-900" to='/home'>Home</Link>
      <Link className="mr-5 hover:text-gray-900" to='/about'>About</Link>
+     <Link className="mr-5 hover:text-gray-900" to='/product'>Product</Link>
      <Link className="mr-5 hover:text-gray-900 relative" to='/about'><TiShoppingCart size={40}/> <span className='absolute top-0 right-0 bottom-1px font-bold  text-2xl'>5</span></Link>
      <Link onClick={logoutAccount} className="mr-5 hover:text-gray-900" to='/login'>Logout</Link>
     </nav>
