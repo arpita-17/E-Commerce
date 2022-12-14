@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
-import Trust from './Trust';
+import React from "react";
+import { Link } from "react-router-dom";
+import Cardsdata from "./CardData";
+import Trust from "./Trust";
+import {FcRating} from "react-icons/fc"
 
 const Home = () => {
-  
-    return (
-      <>
+  return (
+    <>
       <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
         <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
           <svg
@@ -31,7 +31,7 @@ const Home = () => {
             <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
               Everything you
               <br className="hidden md:block" />
-              can imagine{' '}
+              can imagine{" "}
               <span className="inline-block text-deep-purple-accent-400">
                 is real
               </span>
@@ -43,12 +43,9 @@ const Home = () => {
             </p>
             <div className="flex items-center">
               <Link to="/product">
-              <a
-                
-                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get started
-              </a>
+                <a className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                  Get started
+                </a>
               </Link>
               <a
                 href="/"
@@ -61,11 +58,40 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Trust/>
-     
-      </>
-    );
 
-}
+      <div className="container flex flex-row flex-wrap ml-6">
+        {Cardsdata.map((item) => {
+          return (
+            // <div class="container px-5 py-24 mx-auto">
+              <div class="xl:w-1/4 md:w-1/2 p-4">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                  <img
+                    class="h-40 rounded w-full object-cover object-center mb-6"
+                    src={item.imgdata}
+                    alt="content"
+                  />
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    {item.address}
+                  </h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                  {item.rname}
+                  </h2>
+                  <p class="leading-relaxed text-base">
+                  ${item.price}
+                  </p>
+                  <p class="leading-relaxed text-base">
+                   <p className="flex flex-row"> <FcRating className="mt-1 mr-2"/>{item.rating}</p>
+                  </p>
+                  <button className="inline-flex items-center justify-center h-10 px-2 mr-6 mt-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">Add To Cart</button>
+                </div>
+               </div>
+            // </div>
+          );
+        })}
+      </div>
+      <Trust />
+    </>
+  );
+};
 
-export default Home
+export default Home;

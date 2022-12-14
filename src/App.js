@@ -9,6 +9,7 @@ import ProtectedComponent from './Component/ProtectedComponent';
 import About from './Component/About';
 import Product from './Component/Product';
 import Footer from './Component/Footer';
+import CardDetails from './Component/CardDetails';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        <Route path='/home' element={<Home/>}/>
        <Route path='/about' element={<About/>}/>
        <Route path='/product' element={<Product/>}/>
+       <Route path='/carddetails' element={<CardDetails/>}/>
      
     
      </Route> 
