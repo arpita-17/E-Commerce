@@ -17,3 +17,17 @@ export const Logout=()=>{
         type:"LOGOUT"
     }
 }
+
+export const Addcard=(data)=>{
+    return{
+        type:"ADD_CARD",
+        payload:data
+    }
+}
+
+export const Removecard=(id)=>{
+    return{
+        type:"REMOVE_CARD",
+        payload:id
+    }
+}

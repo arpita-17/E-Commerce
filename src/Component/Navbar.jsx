@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 const Navbar = () => {
   const Valid = useSelector((state) => state.accountReducer);
+  const cardInfo=useSelector((state)=>state.cardReducers.card)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +52,7 @@ const Navbar = () => {
                   >
                     <TiShoppingCart size={30}/>
                     <span className="inline-block py-1 px-1.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-600 text-white rounded ml-2">
-                      0
+                     {cardInfo.length}
                     </span>
                   </button>
                 </div>

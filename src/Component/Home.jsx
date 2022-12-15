@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cardsdata from "./CardData";
 import Trust from "./Trust";
 import {FcRating} from "react-icons/fc"
+import { useDispatch } from "react-redux";
+import { Addcard } from "../action/Action";
 
 const Home = () => {
+
+  const [data,setData]=useState(Cardsdata)
+
+  const dispatch=useDispatch()
+
+  const cardSubmit=(e)=>{
+dispatch(Addcard(e))
+  }
   return (
     <>
       <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
@@ -60,10 +70,10 @@ const Home = () => {
       </div>
 
       <div className="container flex flex-row flex-wrap ml-6">
-        {Cardsdata.map((item) => {
+        {data.map((item) => {
           return (
             // <div class="container px-5 py-24 mx-auto">
-              <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div key={item.id} class="xl:w-1/4 md:w-1/2 p-4">
                 <div class="bg-gray-100 p-6 rounded-lg">
                   <img
                     class="h-40 rounded w-full object-cover object-center mb-6"
@@ -82,7 +92,7 @@ const Home = () => {
                   <p class="leading-relaxed text-base">
                    <p className="flex flex-row"> <FcRating className="mt-1 mr-2"/>{item.rating}</p>
                   </p>
-                  <button className="inline-flex items-center justify-center h-10 px-2 mr-6 mt-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">Add To Cart</button>
+                  <button onClick={()=>cardSubmit(item)} className="inline-flex items-center justify-center h-10 px-2 mr-6 mt-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">Add To Cart</button>
                 </div>
                </div>
             // </div>
