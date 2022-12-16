@@ -31,3 +31,10 @@ export const Removecard=(id)=>{
         payload:id
     }
 }
+
+export const Removeqnty=(item)=>{
+    return{
+        type:"REMOVE_QNTY",
+        payload:item
+    }
+}

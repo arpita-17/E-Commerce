@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Removecard } from "../action/Action";
+import { Removecard, Addcard, Removeqnty } from "../action/Action";
 import { ReactComponent as Empty } from "../image/empty.svg";
 
 const CardDetails = () => {
@@ -12,10 +12,18 @@ const CardDetails = () => {
     dispatch(Removecard(id));
   };
 
+  const cardSubmit = (data) => {
+    dispatch(Addcard(data));
+  };
+
+  const removeQanty = (e) => {
+    dispatch(Removeqnty(e));
+  };
+
   const total = () => {
     let price = 0;
     cardInfo.map((item) => {
-      price = price + item.price;
+      price = price + item.price * item.qnty;
     });
     setPrice(price);
   };
@@ -175,6 +183,11 @@ const CardDetails = () => {
                           </label>
                           <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                             <button
+                              onClick={
+                                item.qnty <= 1
+                                  ? () => removeCard(item.id)
+                                  : () => removeQanty(item)
+                              }
                               data-action="decrement"
                               class=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-l cursor-pointer outline-none"
                             >
@@ -186,8 +199,11 @@ const CardDetails = () => {
                               name="custom-input-number"
                               readOnly
                             >{item.qnty}</input> */}
-                            <span class="w-10 pl-4 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none">{item.qnty}</span>
+                            <span class="w-10 pl-4 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none">
+                              {item.qnty}
+                            </span>
                             <button
+                              onClick={() => cardSubmit(item)}
                               data-action="increment"
                               class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-r cursor-pointer"
                             >
@@ -249,7 +265,7 @@ const CardDetails = () => {
             );
           })}
           <div className="flex justify-center">
-            <h1>total:{price}</h1>
+            <h1>Total:{price}</h1>
           </div>
         </div>
       ) : (
@@ -258,6 +274,7 @@ const CardDetails = () => {
           <Empty className="h-80 ml-20" />
         </div>
       )}
+     
     </>
   );
 };
