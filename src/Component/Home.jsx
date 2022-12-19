@@ -6,6 +6,7 @@ import { FcRating } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { Addcard } from "../action/Action";
 import Skelton from "./Skelton";
+import Menu from "./Menu";
 
 const Home = () => {
   const [data, setData] = useState(Cardsdata);
@@ -36,6 +37,14 @@ const Home = () => {
   const cardSubmit = (e) => {
     dispatch(Addcard(e));
   };
+
+  const filteritem =(curritem)=>{
+const updateitem = Cardsdata.filter((cur)=>{
+  return cur.category == curritem
+})
+setcopyData(updateitem)
+console.log(curritem);
+  }
   return (
     <>
       <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
@@ -89,7 +98,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      <div>
+        <Menu setcopyData={setcopyData} Cardsdata={Cardsdata} filteritem={filteritem}/>
+      </div>
       <>
         <div className="container ml-6 mt-10">
           <form>
@@ -176,19 +187,19 @@ const Home = () => {
           </div>
         ) : (
           <>
-          <div className="flex flex-row  flex-wrap">
-            {data.map((item) => {
-              return(
-              <div className=" flex flex-col m-8 rounded shadow-md w-60 sm:w-50 animate-pulse h-50">
-                <div className="h-48 rounded-t bg-slate-300"></div>
-                <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 bg-slate-300">
-                  <div className="w-full h-6 rounded bg-slate-300"></div>
-                  <div className="w-full h-6 rounded bg-slate-300"></div>
-                  <div className="w-3/4 h-6 rounded bg-slate-300"></div>
-                </div>
-              </div>
-              )
-            })}
+            <div className="flex flex-row  flex-wrap">
+              {data.map((item) => {
+                return (
+                  <div className=" flex flex-col m-8 rounded shadow-md w-60 sm:w-50 animate-pulse h-50">
+                    <div className="h-48 rounded-t bg-slate-300"></div>
+                    <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 bg-slate-300">
+                      <div className="w-full h-6 rounded bg-slate-300"></div>
+                      <div className="w-full h-6 rounded bg-slate-300"></div>
+                      <div className="w-3/4 h-6 rounded bg-slate-300"></div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </>
         )}
