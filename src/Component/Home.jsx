@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { Addcard } from "../action/Action";
 import Skelton from "./Skelton";
 import Menu from "./Menu";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [data, setData] = useState(Cardsdata);
@@ -35,6 +37,9 @@ const Home = () => {
   }, []);
 
   const cardSubmit = (e) => {
+    toast.success(`${e.rname} add your card`, {
+      position: toast.POSITION.TOP_CENTER,
+    });
     dispatch(Addcard(e));
   };
 
@@ -204,6 +209,7 @@ console.log(curritem);
           </>
         )}
       </div>
+      <ToastContainer  />
       <Trust />
     </>
   );
