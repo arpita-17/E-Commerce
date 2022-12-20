@@ -3,6 +3,7 @@ import { ReactComponent as YourSvg } from "../image/mobile2.svg";
 import { useDispatch,useSelector } from "react-redux";
 import { Login } from "../action/Action";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Signup = () => {
 
@@ -15,16 +16,26 @@ const Signup = () => {
 
   const validateData = () => {
     if (!email) {
+      toast.warning("Please Enter Valid Email !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return false;
     }
     if (!password) {
+      toast.warning("Please Enter Valid Password !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return false;
     }
     if(email === loginValidation.email && password === loginValidation.password){
-      alert("login succesfully")
+      toast.success(`${loginValidation.name} your Login Succesfully`, {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return true
     }else {
-      alert("wrong credential")
+      toast.error('Wrong Credential !', {
+        position: toast.POSITION.TOP_CENTER
+    });
       return false
     }
    
@@ -35,9 +46,10 @@ const Signup = () => {
     e.preventDefault();
     if (validateData()) {
       dispatch(Login({ email, password }));
+      navigate("/home")
     }
-    console.log(email, password);
-    navigate("/home")
+   
+    
   };
   return (
     <div>

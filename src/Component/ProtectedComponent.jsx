@@ -4,11 +4,12 @@ import { Outlet, Navigate } from 'react-router-dom'
 
 const ProtectedComponent = () => {
 
-    const isLogged = useSelector((state)=>state.accountReducer)
+    const isLogged = useSelector((state)=>state.accountReducer.isLoggedIn)
   
 
     if(!isLogged){
-Navigate("/")
+      return <Navigate to="/"/>
+
     }
   return (
     <>

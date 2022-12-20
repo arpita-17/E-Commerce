@@ -2,33 +2,69 @@ import React, { useState } from "react";
 import { ReactComponent as YourSvg } from "../image/mobile.svg";
 import { useDispatch } from "react-redux";
 import { Register } from "../action/Action";
-
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const validateData = () => {
     if (!name) {
+      toast.warning("Please Enter Valid Name !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return false;
     }
     if (!email) {
+      toast.warning("Please Enter Valid Email!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return false;
     }
     if (!password) {
+      toast.warning("Please Enter Valid Password !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return false;
+    }else if(password.length < 6){
+      toast.warning("Please Enter Password minimum 6 digit !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return false
     }
-    return true;
+    if(name && email && password){
+alert()
+return true
+    }
+
+     return true;
   };
+
+  const alert =()=>{
+    swal({
+      title: `${name} Your Registeration Succesfully`,
+      text: "Please Login",
+      icon: "success",
+      button: "Ok"
+    });
+  }
 
   const SubmitForm = (e) => {
     e.preventDefault();
+
+   
+
     if (validateData()) {
       dispatch(Register({ name, email, password }));
+      navigate("/login");
     }
-    console.log(name, email, password);
+   
+    
   };
 
   return (

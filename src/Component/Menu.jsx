@@ -55,7 +55,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
         </li>
       </ul> */}
       <div>
-        <nav class=" relative flex flex-wrap items-center justify-between px-2 py-3 bg-red-500 mb-3">
+        <nav class=" relative flex flex-wrap items-center justify-between px-2 py-5 bg-red-500 mb-3">
           <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div
               class="lg:flex flex-grow items-center"
@@ -65,7 +65,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                     onClick={() => filteritem("mobile")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class="px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Moblie
@@ -74,7 +74,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                     onClick={() => filteritem("laptop")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class=" px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Laptop
@@ -83,7 +83,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                   onClick={() => filteritem("earphone")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class=" px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Earphone
@@ -92,7 +92,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                   onClick={() => filteritem("shoes")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class=" px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Shoes
@@ -101,7 +101,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                   onClick={() => filteritem("shirt")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class=" px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Shirts
@@ -110,7 +110,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                     onClick={() => filteritem("pant")}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class="px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     Pants
@@ -119,7 +119,7 @@ const Menu = ({ filteritem, Cardsdata, setcopyData }) => {
                 <li class="nav-item">
                   <a
                     onClick={() => setcopyData(Cardsdata)}
-                    class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    class="px-3 py-2 flex items-center text-md  font-bold leading-snug text-white  hover:bg-rose-600 rounded-md"
                     href="#pablo"
                   >
                     All

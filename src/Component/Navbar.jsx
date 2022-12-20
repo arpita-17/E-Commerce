@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../action/Action";
 import { useNavigate } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
+import { toast } from "react-toastify";
+
 const Navbar = () => {
   const Valid = useSelector((state) => state.accountReducer);
   const cardInfo=useSelector((state)=>state.cardReducers.card)
@@ -11,6 +13,11 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const logoutAccount = () => {
+
+    toast.success(`${Valid.name} your Logout Succesfully`, {
+      position: toast.POSITION.TOP_CENTER,
+    });
+
     dispatch(Logout());
     navigate("/");
   };
@@ -18,7 +25,7 @@ const Navbar = () => {
     <>
       <header className="text-gray-600 body-font">
         {Valid.isLoggedIn ? (
-          <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <div className="bg-blue-700 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,16 +39,16 @@ const Navbar = () => {
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
-              <span className="ml-3 text-xl">E-Commerce</span>
+              <span className="ml-3 text-xl text-white">E-Commerce</span>
             </a>
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-              <Link className="mr-5 hover:text-gray-900" to="/home">
+              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/home">
                 Home
               </Link>
-              <Link className="mr-5 hover:text-gray-900" to="/about">
+              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/about">
                 About
               </Link>
-              <Link className="mr-5 hover:text-gray-900" to="/product">
+              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/product">
                 Product
               </Link>
               <Link className="mr-5 hover:text-gray-900" to="/carddetails">
@@ -61,7 +68,7 @@ const Navbar = () => {
       <span className='absolute top-0 right-0 bottom-1px font-bold  text-2xl'>5</span></Link> */}
               <Link
                 onClick={logoutAccount}
-                className="mr-5 hover:text-gray-900"
+                className="mr-5 text-lg text-white hover:text-white hover:bg-red-500 rounded-md p-2"
                 to="/login"
               >
                 Logout
@@ -69,7 +76,7 @@ const Navbar = () => {
             </nav>
           </div>
         ) : (
-          <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <div className=" bg-blue-700 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,13 +90,13 @@ const Navbar = () => {
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
-              <span className="ml-3 text-xl">E-Commerce</span>
+              <span className="ml-3 text-xl text-white">E-Commerce</span>
             </a>
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-              <Link className="mr-5 hover:text-gray-900" to="/">
+              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/">
                 Signup
               </Link>
-              <Link className="mr-5 hover:text-gray-900" to="/login">
+              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/login">
                 Login
               </Link>
             </nav>
