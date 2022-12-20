@@ -338,9 +338,9 @@ const CardDetails = () => {
     </div>
         </div>
       ) : (
-        <div>
-          <h1 className="flex justify-center">Your Card is Empty</h1>
-          <Empty className="h-80 ml-20" />
+        <div className="mt-10">
+          <h1 className="flex justify-center text-red-500 text-xl font-bold">Your Card is Empty ?  </h1>
+          <Empty className="h-80 ml-[200px] mt-8" />
         </div>
       )}
      <ToastContainer/>
