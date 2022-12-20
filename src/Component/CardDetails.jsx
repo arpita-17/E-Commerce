@@ -2,21 +2,31 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Removecard, Addcard, Removeqnty } from "../action/Action";
 import { ReactComponent as Empty } from "../image/empty.svg";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import swal from "sweetalert";
 
 const CardDetails = () => {
   const cardInfo = useSelector((state) => state.cardReducers.card);
 
   const [price, setPrice] = useState(0);
   const dispatch = useDispatch();
-  const removeCard = (id) => {
-    dispatch(Removecard(id));
+
+  const removeCard = (item) => {
+    toast.error(`${item.rname} remove from your card`, {
+      position: toast.POSITION.TOP_CENTER
+  });
+    dispatch(Removecard(item.id));
   };
 
-  // const alert=(item)=>{
-  //   toast.error("Wrong Crendiential !", {
-  //     position: toast.POSITION.TOP_CENTER,
-  //   });
-  // }
+  const checkOut=()=>{
+    swal({
+      title: "Your Ordered Placed Succesfully!",
+      text: "You clicked the button!",
+      icon: "success",
+      button: "Ok",
+    });
+  }
   const cardSubmit = (data) => {
     dispatch(Addcard(data));
   };
@@ -246,7 +256,7 @@ const CardDetails = () => {
                         </span>
                         <button
                         
-                          onClick={() => removeCard(item.id)}
+                          onClick={() => removeCard(item)}
                           className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
                         >
                           Remove Item
@@ -311,6 +321,7 @@ const CardDetails = () => {
       </div>
       <div className="mt-4">
         <button
+        onClick={()=>checkOut()}
           className="
               w-full
               py-2
@@ -332,7 +343,7 @@ const CardDetails = () => {
           <Empty className="h-80 ml-20" />
         </div>
       )}
-     
+     <ToastContainer/>
     </>
   );
 };
