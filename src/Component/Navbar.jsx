@@ -48,9 +48,7 @@ const Navbar = () => {
               <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/about">
                 About
               </Link>
-              <Link className="mr-5 text-lg text-white hover:text-white hover:bg-indigo-600 rounded-md p-2" to="/product">
-                Product
-              </Link>
+             
               <Link className="mr-5 hover:text-gray-900" to="/carddetails">
                 <div className="flex space-x-2 justify-center">
                   <button
