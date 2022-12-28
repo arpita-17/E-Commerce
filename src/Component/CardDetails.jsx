@@ -163,7 +163,7 @@ const CardDetails = () => {
                             <button
                               onClick={
                                 item.qnty <= 1
-                                  ? () => removeCard(item.id)
+                                  ? () => removeCard(item)
                                   : () => removeQanty(item)
                               }
                               data-action="decrement"

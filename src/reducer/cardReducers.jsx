@@ -6,7 +6,7 @@ const initialState = {
 const Addcard = (state, payload) => {
 
     const itemIndex = state.card.findIndex((item)=>item.id === payload.id)
-
+console.log("index",itemIndex)
     if(itemIndex >=0){
       state.card[itemIndex].qnty +=1
 
@@ -43,7 +43,7 @@ const Removeqnty = (state, payload) => {
       ...state,
       card: [...state.card],
     };
-  }else if(state.card[itemIndex_dec].qnty ===1){
+  }else if(state.card[itemIndex_dec].qnty === 1){
     const deletCard= state.card.filter((item)=>item.id !== payload)
 
     return{
