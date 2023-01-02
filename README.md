@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# React E-Commerce Application Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hey there, I am Shubham
 
-## Available Scripts
+#### I have build a React E-Commerce Application Clone using my core Javascript and React skill
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ ##  I have Used following technology in this project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. React Js  
+2. Redux   
+3. Tailwind Css  
+4. React Router Dom 
+5. React Toastify  
+6. Sweet Alert  
 
-### `npm test`
+> My Live Deployed Website Link [Website](https://grand-palmier-9d6fe3.netlify.app)  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+![homee](https://user-images.githubusercontent.com/101961231/210194407-bacf3211-ce05-42a1-8fb5-8883416ec12b.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![product](https://user-images.githubusercontent.com/101961231/210194470-8970dcb8-3ef6-4dcd-bbc4-49f5100bd7e2.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![product2](https://user-images.githubusercontent.com/101961231/210194486-4a657a4f-7515-47d1-a26c-ea1235132322.PNG)
+![signup](https://user-images.githubusercontent.com/101961231/210194513-61dbafdd-9f56-4d27-b833-83b276c61615.PNG)
+![total](https://user-images.githubusercontent.com/101961231/210194530-9730b54a-8e67-4a7d-82b4-9eb7480db703.PNG)
+![login](https://user-images.githubusercontent.com/101961231/210194550-db639595-b77b-4ef0-adac-d389fe90cf66.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+ ## What I have learned in this project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. In this project I have Learned how to use Jsx and   Reusable Component for building a beautiful Website  
+2. I Learned how to use Tailwind Css without leaving your HTML file    
+3. I Learned how to work Redux in Project  
+4. I have also Learned Redux Action ,Dispatch ,Reducer  
+5. I Learn Redux Store 
+6. I Learn React Toastify Message  
+7. I Learn Sweet Alert Message 
