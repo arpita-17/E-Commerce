@@ -53,7 +53,7 @@ const Signup = () => {
     <div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24  flex flex-wrap sm:flex-wrap md:flex-wrap lg:flex-wrap items-center">
-          <div className="lg:w-1/3 md:w-1/2 md:pr-1 lg:pr-0 pr-0">
+          <div className="svg-container  md:pr-1 lg:pr-0 pr-0 w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/2 lg:w-1/2">
             <YourSvg />
           </div>
 

@@ -71,7 +71,7 @@ return true
     <>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24  flex flex-wrap items-center">
-          <div className="md:pr-16 lg:w-1/2 md:w-1/2  lg:pr-0 pr-0  xl:w-1/3 lg:w-1/2 md:w-1/2">
+          <div className="svg-container md:pr-16   lg:pr-0 pr-0 w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/2 lg:w-1/2 ">
             {/* md:pr-16 lg:w-1/2 md:w-1/2*/}
             <YourSvg />
           </div>
