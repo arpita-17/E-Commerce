@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { ReactComponent as YourSvg } from "../image/mobile2.svg";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../action/Action";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Signup = () => {
-
-  const loginValidation = useSelector((state)=>state.accountReducer)
-  const navigate = useNavigate()
+  const loginValidation = useSelector((state) => state.accountReducer);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,43 +26,42 @@ const Signup = () => {
       });
       return false;
     }
-    if(email === loginValidation.email && password === loginValidation.password){
+    if (
+      email === loginValidation.email &&
+      password === loginValidation.password
+    ) {
       toast.success(`${loginValidation.name} your Login Succesfully`, {
         position: toast.POSITION.TOP_CENTER,
       });
-      return true
-    }else {
-      toast.error('Wrong Credential !', {
-        position: toast.POSITION.TOP_CENTER
-    });
-      return false
+      return true;
+    } else {
+      toast.error("Wrong Credential !", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return false;
     }
-   
   };
-
 
   const LoginForm = (e) => {
     e.preventDefault();
     if (validateData()) {
       dispatch(Login({ email, password }));
-      navigate("/home")
+      navigate("/home");
     }
-   
-    
   };
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24  flex flex-wrap md:flex-wrap lg:flex-wrap items-center">
+        <div className="container px-5 py-24  flex flex-wrap sm:flex-wrap md:flex-wrap lg:flex-wrap items-center">
           <div className="lg:w-1/3 md:w-1/2 md:pr-1 lg:pr-0 pr-0">
             <YourSvg />
           </div>
-          
-            <div className="xl:w-1/3 lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-              <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
-                Login
-              </h2>
-              <form action="" onSubmit={LoginForm}>
+
+          <div className="xl:w-1/3 lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
+              Login
+            </h2>
+            <form action="" onSubmit={LoginForm}>
               <div className="relative mb-4">
                 <label
                   htmlFor="email"
@@ -105,9 +103,8 @@ const Signup = () => {
               <p className="text-xs text-gray-500 mt-3">
                 Literally you probably haven't heard of them jean shorts.
               </p>
-              </form>
-            </div>
-          
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -115,3 +112,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+// width="717.67004" height="596.3292" viewBox="0 0 717.67004 596.3292"
