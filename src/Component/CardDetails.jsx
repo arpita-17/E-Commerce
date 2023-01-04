@@ -304,7 +304,9 @@ const CardDetails = () => {
           <h1 className="flex justify-center text-red-500 text-xl font-bold">
             Your Card is Empty ?{" "}
           </h1>
-          <Empty className="h-80 ml-[200px] mt-8" />
+          <div className="w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/3 lg:w-1/3  ml-[50px] md:ml-[200px] lg:ml-[300px] xl:ml-[400px]">
+          <Empty className=" mt-8" />
+          </div>
         </div>
       )}
       <ToastContainer />
@@ -313,3 +315,4 @@ const CardDetails = () => {
 };
 
 export default CardDetails;
+// width="896" height="747.97143" h-80 ml-[200px] mt-8
