@@ -148,10 +148,7 @@ const CardDetails = () => {
                     banjo tattooed umami cardigan. */}
                       </p>
                       <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                        
                         <div className="flex ml-6 items-center">
-                          
-
                           <div className="custom-number-input h-10 w-32" />
                           <label
                             htmlFor="custom-input-number"
@@ -173,12 +170,7 @@ const CardDetails = () => {
                                 -
                               </span>
                             </button>
-                            {/* <input
-                              type="number"
-                              className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
-                              name="custom-input-number"
-                              readOnly
-                            >{item.qnty}</input> */}
+                           
                             <span className="w-10 pl-4 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none">
                               {item.qnty}
                             </span>
@@ -193,28 +185,7 @@ const CardDetails = () => {
                             </button>
                           </div>
 
-                          {/* </span> */}
-                          <div className="relative">
-                            {/* <select class="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
-                          <option>SM</option>
-                          <option>M</option>
-                          <option>L</option>
-                          <option>XL</option>
-                        </select> */}
-                            {/* <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                              <svg
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                class="w-4 h-4"
-                                viewBox="0 0 24 24"
-                              >
-                                <path d="M6 9l6 6 6-6"></path>
-                              </svg>
-                            </span> */}
-                          </div>
+                          <div className="relative"></div>
                         </div>
                       </div>
                       <div className="flex">
@@ -305,7 +276,7 @@ const CardDetails = () => {
             Your Card is Empty ?{" "}
           </h1>
           <div className="w-1/2 sm:w-1/2 md:w-1/2 xl:w-1/3 lg:w-1/3  ml-[50px] md:ml-[200px] lg:ml-[300px] xl:ml-[400px]">
-          <Empty className=" mt-8" />
+            <Empty className=" mt-8" />
           </div>
         </div>
       )}

@@ -1,7 +1,6 @@
 const initialState = {};
 
 const login = (state, { email, password }) => {
-  console.log("state2", state);
   return {
     ...state,
     email,
@@ -11,8 +10,6 @@ const login = (state, { email, password }) => {
 };
 
 const signUp = (state, { name, email, password }) => {
-  // console.log("state1",state);
-  console.log("payload", { name, email, password });
   return {
     ...state,
     name,
@@ -30,7 +27,6 @@ const logout = (state) => {
 };
 
 const accountReducer = (state = initialState, action) => {
-  console.log("state3", state);
   switch (action.type) {
     case "LOGIN":
       return login(state, action.payload);
