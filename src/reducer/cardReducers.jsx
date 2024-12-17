@@ -19,7 +19,6 @@ const Addcard = (state, payload) => {
       card: [...state.card, temp],
     };
   }
-  
 };
 
 const Removecard = (state, payload) => {
@@ -63,6 +62,5 @@ const cardReducers = (state = initialState, action) => {
 };
 
 export default cardReducers;
-
 
 // card :[shoes[0] id:1,mobile[1] id:2]

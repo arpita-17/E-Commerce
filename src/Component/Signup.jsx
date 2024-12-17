@@ -31,40 +31,36 @@ const Signup = () => {
         position: toast.POSITION.TOP_CENTER,
       });
       return false;
-    }else if(password.length < 6){
+    } else if (password.length < 6) {
       toast.warning("Please Enter Password minimum 6 digit !", {
         position: toast.POSITION.TOP_CENTER,
       });
-      return false
+      return false;
     }
-    if(name && email && password){
-alert()
-return true
+    if (name && email && password) {
+      alert();
+      return true;
     }
 
-     return true;
+    return true;
   };
 
-  const alert =()=>{
+  const alert = () => {
     swal({
       title: `${name} Your Registeration Succesfully`,
       text: "Please Login",
       icon: "success",
-      button: "Ok"
+      button: "Ok",
     });
-  }
+  };
 
   const SubmitForm = (e) => {
     e.preventDefault();
-
-   
 
     if (validateData()) {
       dispatch(Register({ name, email, password }));
       navigate("/login");
     }
-   
-    
   };
 
   return (
