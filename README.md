@@ -1,6 +1,6 @@
 # React E-Commerce Application Clone
 
-## Hey there, I am Shubham
+## Hey there, I am Arpita
 
 #### I have build a React E-Commerce Application Clone using my core Javascript and React skill
 
